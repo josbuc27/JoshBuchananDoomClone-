@@ -1,7 +1,7 @@
 extends KinematicBody
 
 onready var nav = get_tree().get_nodes_in_group("NavMesh")[0]
-onready var Player = get_tree().get_nodes_in_group("Player")[0]
+onready var player = get_tree().get_nodes_in_group("Player")[0]
 
 
 var path = [] #hold  the path coordinates from the enemy to the player 
@@ -21,12 +21,12 @@ func take_damage(dmg_amount):
 func _physics_process(delta):
 	if path_index < path.size():
 		var direction =	(path[path_index] - global_transform.origin)
-		if direction.length () < 1:
+		if direction.length() < 1:
 			path_index += 1
 		else:
 			move_and_slide(direction.normalized()* speed,Vector3.UP)
-	else:
-		find_path(Player.global_transform.origin)
+	
+		
 
 func find_path(target):
 	path = nav.get_simple_path(global_transform.origin,target)
@@ -47,3 +47,7 @@ func shoot(target):
 	pass
 	
 	
+
+
+func _on_Timer_timeout():
+	find_path(player.global_transform.origin)

@@ -23,7 +23,7 @@
 [ext_resource path="res://Sprites/AutoShotgunGuy/asgzm0.png" type="Texture" id=21]
 [ext_resource path="res://Sprites/AutoShotgunGuy/asgzn0.png" type="Texture" id=22]
 [ext_resource path="res://Sprites/AutoShotgunGuy/asgze1.png" type="Texture" id=23]
-[ext_resource path="res://Scences/EnemyBasicGrunt.gd" type="Script" id=24]
+[ext_resource path="res://Scripts/EnemyBasicGrunt.gd" type="Script" id=24]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -69,14 +69,17 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.376551, 0 )
+transform = Transform( 3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, -0.998781, 0 )
 centered = false
-offset = Vector2( -16, 0 )
+offset = Vector2( -16.5, 0 )
+billboard = 2
 frames = SubResource( 2 )
 animation = "walking"
-frame = 3
 playing = true
 
 [node name="RayCast" type="RayCast" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
