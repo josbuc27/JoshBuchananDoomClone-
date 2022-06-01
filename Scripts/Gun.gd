@@ -2,7 +2,7 @@ extends Spatial
 
 onready var gun_sprite = $CanvasLayer/Control/GunSprite
 onready var gun_rays = $GunRays.get_children()
-onready var flash 
+onready var flash = preload("res://Scences/MuzzleFlash.tscn")
 var damage = 8 
 var can_shoot = true 
 
@@ -13,10 +13,12 @@ func check_hit():
 	for ray in gun_rays:
 		if ray.is_colliding():
 			if ray.get_collider().is_in_group("Enemy"):
-			ray.get_collider().take_damage(8)
-	
+				ray.get_collider().take_damage(8)
+
+
 func make_flash():
-	pass
+	var f = flash.instance()
+	add_child(f)
 	
 func _process(delta):
 	if Input.is_action_just_released("shoot") and can_shoot:

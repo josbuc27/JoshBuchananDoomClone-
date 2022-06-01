@@ -8,6 +8,7 @@ var path = [] #hold  the path coordinates from the enemy to the player
 var path_index = 0 #keep track of which coorddinate to go to 
 var speed = 3
 var health = 20 
+var move = true 
 
 func _ready():
 	pass
@@ -16,6 +17,15 @@ func take_damage(dmg_amount):
 	health -= dmg_amount
 	if health <= 0:
 		death()
+		return
+		move = false 
+	$AnimatedSprite3D.play("hit")
+	yield($AnimatedSprite3D, "animation_finished")
+	$AnimatedSprite3D.play("walking")
+	move = true 
+	
+	
+	
 	
 	
 func _physics_process(delta):
@@ -38,7 +48,7 @@ func death():
 	set_physics_process(false)
 	$CollisionShape.disabled = true
 	if health < -20:
-		$AnimatedSprite3D.play("exlpode") 
+		$AnimatedSprite3D.play("explode") 
 	else:
 		$AnimatedSprite3D.play("die")
 	
