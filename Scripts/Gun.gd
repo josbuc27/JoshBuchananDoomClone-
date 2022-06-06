@@ -20,7 +20,7 @@ func check_hit():
 				var new_blood = blood.instance()
 				get_node("/root/World").add_child(new_blood)
 				new_blood.global_transform.origin = ray.get_collision_point()
-				new_blood.emmiting = true
+				new_blood.emitting = true
 
 
 
