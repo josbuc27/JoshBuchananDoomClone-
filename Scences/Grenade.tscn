@@ -6,19 +6,19 @@
 [ext_resource path="res://Sprites/GrenadeLauncher/shrpo1.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/GrenadeLauncher/mis6d0.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/GrenadeLauncher/mis6f0.png" type="Texture" id=6]
-[ext_resource path="res://Grenade.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Grenade.gd" type="Script" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "grenade",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "explode",
 "speed": 11.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "grenade",
+"speed": 5.0
 } ]
 
 [sub_resource type="SphereShape" id=2]
@@ -31,6 +31,7 @@ radius = 0.938372
 script = ExtResource( 7 )
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 billboard = 2
 frames = SubResource( 1 )
 animation = "grenade"
