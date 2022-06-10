@@ -1,8 +1,12 @@
 extends Area
 
-var flame_speed = 15
-var flame_damage = 5
+var flame_speed = 30
+var flame_damage = 1
 
+func _ready():
+	$AnimatedSprite3D.play("explode")
+	yield($AnimatedSprite3D,"animation_finished")
+	queue_free()
 
 func deal_damage():
 	var enimies = get_overlapping_bodies()
@@ -21,10 +25,8 @@ func _process(delta):
 func _on_Flames_body_entered(body):
 	if body.is_in_group("Player"):
 		return
-	set_process(false)
-	$AnimatedSprite3D.play("explode")
+	#set_process(false)
 	deal_damage()
-	yield($AnimatedSprite3D,"animation_finished")
-	queue_free()
+	
 
 

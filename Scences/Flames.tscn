@@ -45,7 +45,7 @@ transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 billboard = 2
 frames = SubResource( 1 )
 animation = "explode"
-frame = 11
+frame = 5
 playing = true
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

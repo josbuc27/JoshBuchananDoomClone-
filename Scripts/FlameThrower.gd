@@ -13,7 +13,7 @@ func launch_projectile():
 	
 	
 func _process(delta):
-	if Input.is_action_just_pressed("shoot") and can_shoot:
+	if Input.is_action_pressed("shoot") and can_shoot:
 		gunsprite.play("shoot")
 		launch_projectile()
 		can_shoot = false

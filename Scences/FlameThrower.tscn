@@ -14,10 +14,10 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 1 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "shoot",
-"speed": 12.0
+"speed": 60.0
 } ]
 
 [node name="FlameThrower" type="Spatial"]
@@ -34,6 +34,7 @@ margin_left = -40.0
 margin_top = -40.0
 
 [node name="GunSprite" type="AnimatedSprite" parent="CanvasLayer/Control"]
+modulate = Color( 1, 1, 1, 0.584314 )
 position = Vector2( -319, 35 )
 rotation = 3.14159
 scale = Vector2( 2, 2 )
@@ -45,3 +46,4 @@ flip_h = true
 flip_v = true
 
 [node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.80544 )
