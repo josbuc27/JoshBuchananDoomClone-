@@ -4,7 +4,8 @@ onready var gun_sprite = $CanvasLayer/Control/GunSprite
 onready var gun_rays = $GunRays.get_children()
 onready var flash = preload("res://Scences/MuzzleFlash.tscn")
 onready var blood = preload("res://Scences/Blood.tscn")
-var damage = 8 
+export var damage = 8 
+export var can_flash = true
 var can_shoot = true 
 export var rapid_fire = false 
 
@@ -31,7 +32,8 @@ func make_flash():
 func _process(delta):
 	if Input.is_action_just_pressed("shoot") and can_shoot:
 		gun_sprite.play("shoot")
-		make_flash()
+		if can_flash:
+			make_flash()
 		check_hit()
 		can_shoot = false 
 		

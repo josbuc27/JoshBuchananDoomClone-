@@ -12,8 +12,10 @@ onready var pistol = preload("res://Scences/Pistol.tscn")
 onready var shotgun = preload("res://Scences/Shotgun.tscn")
 onready var uzi = preload("res://Scences/Uzi.tscn")
 onready var grenadelauncher = preload("res://Scences/GrenadeLauncher.tscn")
+onready var knife =preload("res://Scences/Knife.tscn")
+onready var flamethrower = preload("res://Scences/FlameThrower.tscn")
 var current_gun = 0
-onready var carried_guns = [pistol,shotgun,uzi,grenadelauncher]
+onready var carried_guns = [pistol,shotgun,uzi,grenadelauncher,knife,flamethrower]
 
 
 #functions 

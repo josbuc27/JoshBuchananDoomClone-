@@ -21,6 +21,7 @@ animations = [ {
 
 [node name="Uzi" type="Spatial"]
 script = ExtResource( 5 )
+damage = 10
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -38,6 +39,7 @@ rotation = 3.14159
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "shoot"
+frame = 3
 playing = true
 centered = false
 flip_h = true
