@@ -13,12 +13,7 @@ func deal_damage():
 	for body in enimies:
 		if body.is_in_group("Enemy"):
 			body.take_damage(flame_damage)
-	enimies =$SplashDamage.get_overlapping_bodies()
-	for body in enimies:
-		if body.is_in_group("Enemy"):
-			body.take_damage(flame_damage)
-		
-	
+			
 func _process(delta):
 	translate(Vector3.FORWARD * flame_speed * delta ) 
 

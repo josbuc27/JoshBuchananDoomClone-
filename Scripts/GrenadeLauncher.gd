@@ -13,10 +13,11 @@ func launch_projectile():
 	
 	
 func _process(delta):
-	if Input.is_action_just_pressed("shoot") and can_shoot:
+	if Input.is_action_just_pressed("shoot") and can_shoot and PlayerStats.ammo_grenade> 0:
 		gunsprite.play("shoot")
 		launch_projectile()
 		can_shoot = false
+		PlayerStats.change_shotgun_ammo(-1)
 		yield(gunsprite,"animation_finished")
 		can_shoot = true
 		gunsprite.play("idle")

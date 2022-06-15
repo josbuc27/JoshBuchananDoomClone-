@@ -14,6 +14,10 @@ config/name="JoshBuchananDoomClone"
 run/main_scene="res://Scences/World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerStats="*res://Scripts/PlayerStats.gd"
+
 [importer_defaults]
 
 texture={
