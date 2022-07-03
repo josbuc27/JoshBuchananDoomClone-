@@ -16,16 +16,19 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
+mouse_filter = 2
 theme = SubResource( 1 )
 
 [node name="Stats" type="HBoxContainer" parent="MarginContainer"]
 margin_right = 984.0
 margin_bottom = 560.0
+mouse_filter = 2
 
 [node name="Labels" type="VBoxContainer" parent="MarginContainer/Stats"]
 margin_right = 168.0
 margin_bottom = 560.0
 rect_min_size = Vector2( 120, 0 )
+mouse_filter = 2
 alignment = 2
 
 [node name="ArmorLabel" type="Label" parent="MarginContainer/Stats/Labels"]
@@ -42,10 +45,11 @@ margin_bottom = 560.0
 text = "health"
 
 [node name="Values" type="VBoxContainer" parent="MarginContainer/Stats"]
-margin_left = 190.0
-margin_right = 274.0
+margin_left = 172.0
+margin_right = 256.0
 margin_bottom = 560.0
 rect_min_size = Vector2( 80, 0 )
+mouse_filter = 2
 alignment = 2
 
 [node name="ArmorValue" type="Label" parent="MarginContainer/Stats/Values"]
@@ -66,6 +70,7 @@ align = 2
 margin_left = 260.0
 margin_right = 984.0
 margin_bottom = 560.0
+mouse_filter = 2
 size_flags_horizontal = 3
 alignment = 2
 

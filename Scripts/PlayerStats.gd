@@ -7,10 +7,10 @@ var max_health = 200
 var armor = 0
 var max_armor = 100
 var guns_carried = []
-var ammo_pistol = 50
-var ammo_grenade = 0
-var ammo_shells = 0
-var ammo_plasma = 0
+var ammo_pistol = 100
+var ammo_grenade = 100
+var ammo_shells = 100
+var ammo_flame = 100
 var ammo_max_pistol = 200
 var ammo_max_grenade = 50
 var ammo_max_shells = 100
@@ -88,8 +88,8 @@ func get_shotgun_ammo():
 func get_grenade_ammo():
 	return str(ammo_grenade)
 	
-func get_plasma_ammo():
-	return str(ammo_plasma)
+func get_flame_ammo():
+	return str(ammo_flame)
 	
 func get_health():
 	return str(health)

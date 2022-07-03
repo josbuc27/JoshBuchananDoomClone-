@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/cuthl3.png-47ee35a17b8d7982c28d1d38c554f9bd.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Sprites/Squid/cuthl3.png"
+dest_files=[ "res://.import/cuthl3.png-47ee35a17b8d7982c28d1d38c554f9bd.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
