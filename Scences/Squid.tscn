@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Sprites/Squid/cuthp0.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Squid/cuths0.png" type="Texture" id=2]
@@ -18,28 +18,15 @@
 [ext_resource path="res://Sprites/Squid/cuthi1.png" type="Texture" id=16]
 [ext_resource path="res://Sprites/Squid/cuthh1.png" type="Texture" id=17]
 [ext_resource path="res://Sprites/Squid/cuthg1.png" type="Texture" id=18]
-[ext_resource path="res://Scripts/EnemyBasicGrunt.gd" type="Script" id=24]
+[ext_resource path="res://Scripts/SquidEnemy.gd" type="Script" id=19]
+[ext_resource path="res://Sprites/Squid/cuthj1.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Squid/cuthk1.png" type="Texture" id=21]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "walking",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 2 ) ],
-"loop": true,
-"name": "hit",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 12 ) ],
 "loop": false,
 "name": "die",
@@ -50,31 +37,50 @@ animations = [ {
 "name": "explode",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 9 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "hit",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 16 ) ],
 "loop": true,
+"name": "hitting",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
 "name": "shoot",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "walking",
 "speed": 5.0
 } ]
 
 [sub_resource type="CylinderShape" id=3]
-radius = 6.71358
 height = 1.58231
+radius = 6.71358
 
 [node name="Squid" type="KinematicBody" groups=["Enemy"]]
-script = ExtResource( 24 )
+script = ExtResource( 19 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.998781, 0 )
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 5.00679e-06, -0.988486, 0.00185347 )
 centered = false
-offset = Vector2( -28.84, 0 )
+offset = Vector2( -20.109, 0 )
 billboard = 2
 frames = SubResource( 2 )
-animation = "idle"
-playing = true
+animation = "shoot"
 
 [node name="Visual" type="RayCast" parent="."]
 cast_to = Vector3( 0, 0, -15 )
@@ -88,6 +94,7 @@ autostart = true
 shape = SubResource( 3 )
 
 [node name="ShootTimer" type="Timer" parent="Area"]
+autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

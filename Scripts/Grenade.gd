@@ -1,5 +1,6 @@
 extends Area
 
+
 var grenade_speed = 15
 var grenade_damage = 25
 var grenade_splash = 25

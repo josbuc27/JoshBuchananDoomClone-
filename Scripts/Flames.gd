@@ -1,7 +1,7 @@
 extends Area
 
 var flame_speed = 30
-var flame_damage = 1
+var flame_damage = 4
 
 func _ready():
 	$AnimatedSprite3D.play("explode")

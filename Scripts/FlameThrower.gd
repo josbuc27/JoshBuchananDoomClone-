@@ -6,6 +6,7 @@ onready var gunsprite = $CanvasLayer/Control/GunSprite
 onready var spawn_location = $Position3D
 onready var flame = preload("res://Scences/Flames.tscn")
 
+
 func launch_projectile():
 	var new_flame = flame.instance()
 	get_node("/root/World").add_child(new_flame)
