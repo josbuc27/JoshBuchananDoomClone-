@@ -121,7 +121,7 @@ func launch_projectile():
 	get_node("/root/World").add_child(new_ball)
 	
 	new_ball.global_transform = global_transform
-	new_ball.look_at(playera)
+	new_ball.look_at(player)
 	
 
 
