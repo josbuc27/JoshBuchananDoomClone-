@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/Level 1 Doom Clone.1.map-45647e40f1933becb697f2d53642256f.tres"
+
+[deps]
+
+source_file="res://Maps/autosave/Level 1 Doom Clone.1.map"
+dest_files=[ "res://.import/Level 1 Doom Clone.1.map-45647e40f1933becb697f2d53642256f.tres" ]
+
+[params]
+
