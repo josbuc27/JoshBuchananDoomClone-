@@ -17,7 +17,10 @@ func _process(delta):
 		ammo.text = PlayerStats.get_pistol_ammo()
 	if current_gun == "Shotgun":
 		ammo.text = PlayerStats.get_shotgun_ammo()
-	if current_gun == "Uz":
+	if current_gun == "Uzi":
 		ammo.text = PlayerStats.get_pistol_ammo()
 	if current_gun == "GrenadeLauncher":
 		ammo.text = PlayerStats.get_grenade_ammo()
+	if current_gun == "FlameThrower":
+		ammo.text = PlayerStats.get_flame_ammo()
+

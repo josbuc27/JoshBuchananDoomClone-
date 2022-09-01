@@ -1,4 +1,4 @@
-[gd_scene load_steps=209 format=2]
+[gd_scene load_steps=210 format=2]
 
 [ext_resource path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" type="Resource" id=1]
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=2]
@@ -307,6 +307,9 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 24
 }
+
+[sub_resource type="ConcavePolygonShape" id=582]
+data = PoolVector3Array( -1, 2.5, -2, -1, -2.5, -2, 1, -2.5, -2, -1, 2.5, -2, 1, -2.5, -2, 1, 2.5, -2, -1, 2.5, -2, -1, 2.5, 2, -1, -2.5, 2, -1, 2.5, -2, -1, -2.5, 2, -1, -2.5, -2, 1, -2.5, -2, -1, -2.5, -2, -1, -2.5, 2, 1, -2.5, -2, -1, -2.5, 2, 1, -2.5, 2, 1, 2.5, -2, 1, 2.5, 2, -1, 2.5, 2, 1, 2.5, -2, -1, 2.5, 2, -1, 2.5, -2, 1, 2.5, -2, 1, -2.5, -2, 1, -2.5, 2, 1, 2.5, -2, 1, -2.5, 2, 1, 2.5, 2, -1, 2.5, 2, 1, 2.5, 2, 1, -2.5, 2, -1, 2.5, 2, 1, -2.5, 2, -1, -2.5, 2 )
 
 [sub_resource type="ConvexPolygonShape" id=390]
 points = PoolVector3Array( -1, 2.5, -2, -1, -2.5, -2, 1, -2.5, -2, 1, 2.5, -2, -1, 2.5, 2, -1, -2.5, 2, 1, -2.5, 2, 1, 2.5, 2 )
@@ -1369,6 +1372,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 12.5, -4 )
 
 [node name="entity_5_mesh_instance" type="MeshInstance" parent="QodotMap/Door 1"]
 mesh = SubResource( 389 )
+
+[node name="StaticBody" type="StaticBody" parent="QodotMap/Door 1/entity_5_mesh_instance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="QodotMap/Door 1/entity_5_mesh_instance/StaticBody"]
+shape = SubResource( 582 )
 
 [node name="entity_5_brush_0_collision_shape" type="CollisionShape" parent="QodotMap/Door 1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.622, 0 )

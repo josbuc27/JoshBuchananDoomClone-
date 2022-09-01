@@ -5,7 +5,7 @@ var velocity = Vector3()
 var gravity = -30 
 var max_speed = 8 
 var mouse_sensitivty =0.009
-
+var health = 100 
 
 #gun variables 
 onready var pistol = preload("res://Scences/Pistol.tscn")
@@ -71,3 +71,8 @@ func _process(delta):
 			if $InteractCast.get_collider().is_in_group("Door"):
 				$InteractCast.get_collider().get_node("AnimationPlayer").play("OpenDoor")
 				print("Door Open")
+
+
+func player_death():
+	if is_in_group("player") and health == 0:
+		get_tree().quit()
