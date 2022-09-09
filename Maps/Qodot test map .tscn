@@ -1,4 +1,4 @@
-[gd_scene load_steps=210 format=2]
+[gd_scene load_steps=212 format=2]
 
 [ext_resource path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" type="Resource" id=1]
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=2]
@@ -81,6 +81,10 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 0, 0 ) ]
 }
 
+[sub_resource type="SpatialMaterial" id=584]
+albedo_color = Color( 1, 0, 0, 1 )
+albedo_texture = ExtResource( 3 )
+
 [sub_resource type="ArrayMesh" id=383]
 surfaces/0 = {
 "aabb": AABB( -0.5, -2.5, -2, 1, 5.00001, 4 ),
@@ -89,7 +93,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 36,
-"material": SubResource( 380 ),
+"material": SubResource( 584 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
@@ -451,6 +455,10 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 0, 0 ) ]
 }
 
+[sub_resource type="SpatialMaterial" id=583]
+albedo_color = Color( 0, 0.529412, 0.980392, 1 )
+albedo_texture = ExtResource( 3 )
+
 [sub_resource type="ArrayMesh" id=395]
 surfaces/0 = {
 "aabb": AABB( -2, -2.5, -1, 4, 5.00001, 2 ),
@@ -459,7 +467,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 36,
-"material": SubResource( 380 ),
+"material": SubResource( 583 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
@@ -1372,6 +1380,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 12.5, -4 )
 
 [node name="entity_5_mesh_instance" type="MeshInstance" parent="QodotMap/Door 1"]
 mesh = SubResource( 389 )
+skeleton = NodePath("")
 
 [node name="StaticBody" type="StaticBody" parent="QodotMap/Door 1/entity_5_mesh_instance"]
 
@@ -1401,7 +1410,7 @@ anims/RESET = SubResource( 575 )
 
 [node name="entity_7_func_group" type="StaticBody" parent="QodotMap"]
 
-[node name="Door 2" type="StaticBody" parent="QodotMap" groups=["Door"]]
+[node name="Door 2" type="StaticBody" parent="QodotMap" groups=["Blue Door"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 12.5, -12 )
 
 [node name="entity_8_mesh_instance" type="MeshInstance" parent="QodotMap/Door 2"]

@@ -1,6 +1,6 @@
 extends Node
 #Player variables
- 
+var inventory = []
  
 var health = 100
 var max_health = 200
