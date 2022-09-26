@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scences/Armor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scences/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scences/HealthPickup.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scences/KeyPickup.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scences/KeyPickup(red).tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scences/KeyPickup(pink).tscn" type="PackedScene" id=10]
 
 [node name="World" type="Spatial"]
 
@@ -48,4 +49,7 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 16.6846, 0.0666794, -58.8687 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66655, 0.172039, -59.9128 )
 
 [node name="KeyPickup(red)" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.360957, 0.49479, -133.38 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.7213, 9.07057, -133.623 )
+
+[node name="KeyPickup(pink)" parent="." instance=ExtResource( 10 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.826811, -137.881 )

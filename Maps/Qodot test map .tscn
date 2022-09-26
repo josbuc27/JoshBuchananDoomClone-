@@ -1,4 +1,4 @@
-[gd_scene load_steps=212 format=2]
+[gd_scene load_steps=214 format=2]
 
 [ext_resource path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" type="Resource" id=1]
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=2]
@@ -530,6 +530,15 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 0, 0 ) ]
 }
 
+[sub_resource type="SpatialMaterial" id=586]
+albedo_color = Color( 0.921569, 0.105882, 1, 1 )
+albedo_texture = ExtResource( 3 )
+emission_enabled = true
+emission = Color( 0.243137, 0.0941176, 0.243137, 1 )
+emission_energy = 0.01
+emission_operator = 0
+emission_on_uv2 = false
+
 [sub_resource type="ArrayMesh" id=397]
 surfaces/0 = {
 "aabb": AABB( -0.5, -2.5, -2, 1, 5.00001, 4 ),
@@ -538,7 +547,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 36,
-"material": SubResource( 380 ),
+"material": SubResource( 586 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
@@ -672,6 +681,9 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 0, 0 ) ]
 }
 
+[sub_resource type="SpatialMaterial" id=585]
+albedo_texture = ExtResource( 3 )
+
 [sub_resource type="ArrayMesh" id=401]
 surfaces/0 = {
 "aabb": AABB( -0.5, -2.5, -2, 1, 5.00001, 4 ),
@@ -680,7 +692,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 36,
-"material": SubResource( 380 ),
+"material": SubResource( 585 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
@@ -1335,7 +1347,7 @@ shape = SubResource( 382 )
 anims/OpenDoor = SubResource( 576 )
 anims/RESET = SubResource( 577 )
 
-[node name="Door 10" type="StaticBody" parent="QodotMap" groups=["Door"]]
+[node name="Door 10" type="StaticBody" parent="QodotMap" groups=["Red Door"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 12.5, -86 )
 
 [node name="entity_2_mesh_instance" type="MeshInstance" parent="QodotMap/Door 10"]
@@ -1423,7 +1435,7 @@ shape = SubResource( 396 )
 anims/OpenDoor = SubResource( 562 )
 anims/RESET = SubResource( 563 )
 
-[node name="Door 3" type="StaticBody" parent="QodotMap" groups=["Door"]]
+[node name="Door 3" type="StaticBody" parent="QodotMap" groups=["Pink Door"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59.5, 12.5, -30 )
 
 [node name="entity_9_mesh_instance" type="MeshInstance" parent="QodotMap/Door 3"]
@@ -1449,7 +1461,7 @@ shape = SubResource( 400 )
 anims/OpenDoor = SubResource( 566 )
 anims/RESET = SubResource( 567 )
 
-[node name="Door 5" type="StaticBody" parent="QodotMap" groups=["Door"]]
+[node name="Door 5" type="StaticBody" parent="QodotMap"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 75.5, 21.5, -86 )
 
 [node name="entity_11_mesh_instance" type="MeshInstance" parent="QodotMap/Door 5"]
