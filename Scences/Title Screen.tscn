@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Font/DoomText/DoomText.fnt" type="BitmapFont" id=1]
 [ext_resource path="res://Images/Logo.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/NewGameButton.gd" type="Script" id=3]
-[ext_resource path="res://Scences/ControlsButton.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/ControlsButton.gd" type="Script" id=4]
+[ext_resource path="res://Images/PowermetalCoverpixle.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -40,6 +41,16 @@ tracks/0/keys = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.627451 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -5.0
+margin_top = -300.0
+margin_right = -5.0
+margin_bottom = 124.0
+texture = ExtResource( 5 )
+
 [node name="Menu" type="VBoxContainer" parent="."]
 margin_left = 120.0
 margin_top = 80.0
@@ -69,6 +80,7 @@ margin_top = 115.0
 margin_right = 360.0
 margin_bottom = 175.0
 rect_min_size = Vector2( 360, 60 )
+flat = true
 script = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="Menu/CenterRow/Buttons/NewGameButton"]
@@ -84,6 +96,7 @@ margin_top = 195.0
 margin_right = 360.0
 margin_bottom = 255.0
 rect_min_size = Vector2( 360, 60 )
+flat = true
 script = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="Menu/CenterRow/Buttons/ControlsButton"]
@@ -99,6 +112,7 @@ margin_top = 275.0
 margin_right = 360.0
 margin_bottom = 335.0
 rect_min_size = Vector2( 360, 60 )
+flat = true
 
 [node name="Label" type="Label" parent="Menu/CenterRow/Buttons/CreditsButton"]
 margin_right = 40.0
